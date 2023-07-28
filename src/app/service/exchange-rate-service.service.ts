@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExchangeRateService {
-  private apiKey = 'f813fe28ac72a9c62966039a'; // Sua chave de API aqui
+  private apiKey = 'f813fe28ac72a9c62966039a'; 
   private baseUrl = 'https://v6.exchangerate-api.com/v6';
 
   constructor(private http: HttpClient) { }

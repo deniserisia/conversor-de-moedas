@@ -5,7 +5,8 @@ body {
   }
   
   header {
-    background: #869115;
+    background: #322653;
+    position: relative; /* Adiciona esta propriedade para criar um contexto de posicionamento para o <nav> */
   }
   
   nav {
@@ -15,6 +16,8 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative; /* Adiciona esta propriedade para que o <nav> fique em cima da imagem de background */
+    z-index: 1; /* Define um z-index maior para que o <nav> fique em cima da imagem */
   }
   
   .logo-container {
@@ -73,10 +76,11 @@ body {
       flex-direction: column;
       position: fixed;
       top: 80px;
-      right: 0; 
+      right: 0;
       width: 100%;
-      background: #1b9bff;
+      background: #322653;;
       padding: 20px;
+      z-index: 2; /* Define um z-index maior para que o <nav> fique em cima da imagem */
     }
   
     .menu li {
@@ -91,4 +95,5 @@ body {
     #check:checked ~ .menu {
       display: flex;
     }
-}  
+  }
+  
