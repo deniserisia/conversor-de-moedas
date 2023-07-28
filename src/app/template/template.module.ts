@@ -9,13 +9,17 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SubHeaderComponent
+   // HeaderComponent,
+   // FooterComponent,
+   // SubHeaderComponent
   ],
   imports: [
     CommonModule,
     TemplateRoutingModule
+  ], exports:[
+   // HeaderComponent,
+   // FooterComponent,
+   // SubHeaderComponent
   ]
 })
 export class TemplateModule { }
