@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background: #322653;
+    position: relative; /* Adiciona esta propriedade para criar um contexto de posicionamento para o <nav> */
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Adiciona esta propriedade para que o <nav> fique em cima da imagem de background */
+    z-index: 1; /* Define um z-index maior para que o <nav> fique em cima da imagem */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+  
+  .menu li a {
+    color: #ECEDDB;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  
+  .menu li a.active,
+  .menu li a:hover {
+    background: #C1D316;
+    transition: .5s;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: #ECEDDB;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  @media (max-width: 858px) {
+    .logo img {
+      width: 100px;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 80px;
+      right: 0;
+      width: 100%;
+      background: #322653;
+      padding: 20px;
+      z-index: 2; /* Define um z-index maior para que o <nav> fique em cima da imagem */
+    }
+  
+    .menu li {
+      margin: 10px 0;
+    }
+  
+    .checkbtn {
+      display: block;
+      margin-right: 20px;
+    }
+  
+    #check:checked ~ .menu {
+      display: flex;
+    }
+  }
+  

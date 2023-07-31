@@ -1,0 +1,12 @@
+<header class="sub-header" *ngIf="!isMenuOpen">
+    <div class="exchange-rates">
+      <div class="carousel" [ngStyle]="getCarouselStyle()">
+        <div class="currencies-container">
+          <p *ngFor="let currency of currencies; let i = index;" [style.transform]="getCurrencyTransform(i)">
+            {{ currency.name }}: <span>{{ currency.rate }}</span>
+          </p>
+        </div>
+      </div>
+      <p class="base-currency-info">* As cotações são baseadas no Real Brasileiro (BRL).</p>
+    </div>
+</header>  

@@ -1,0 +1,75 @@
+/* Estilos gerais para o footer */
+footer {
+    background: #322653;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-media {
+    flex: 1;
+  }
+  
+  .social-media h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .social-media ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-media li {
+    margin-bottom: 5px;
+  }
+  
+  .social-media a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Estilos para a coluna de endereço e contato */
+  .address-contact {
+    flex: 1;
+  }
+  
+  .address-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .address-contact p {
+    margin: 0;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+}
+
+  @media screen and (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .social-media,
+    .address-contact,
+    .logo {
+      margin-bottom: 20px;
+    }
+}
+

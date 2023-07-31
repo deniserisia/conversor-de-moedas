@@ -1,0 +1,63 @@
+/* Estilos do sub-header */
+.sub-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+}
+  
+.exchange-rates {
+    display: flex; /* Torna os elementos filhos (p e h3) flex containers */
+    flex-wrap: wrap; /* Permite que os elementos se ajustem a uma única linha */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exchange-rates p {
+    margin: 5px;
+}
+  
+.exchange-rates span {
+    margin-left: 5px;
+}
+h3 {
+    margin-top: 10px;
+}
+.exchange-rates p {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} 
+
+.base-currency-info {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Estilos para o efeito de carrossel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  .currencies-container {
+    display: flex;
+    animation: scroll 55s linear infinite; /* Aumentamos o tempo da animação para 45 segundos */
+  }
+  
+  .carousel p {
+    margin-right: 30px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}  
