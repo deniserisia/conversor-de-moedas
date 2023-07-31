@@ -5,6 +5,7 @@ import { TemplateRoutingModule } from './template-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SubHeaderComponent } from './sub-header/sub-header.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
   ],
   imports: [
     CommonModule,
-    TemplateRoutingModule
+    TemplateRoutingModule,
+    RouterModule
   ], exports:[
    // HeaderComponent,
    // FooterComponent,
