@@ -1,1 +1,32 @@
-<p>page-conversao works!</p>
+<section class="converter-section">
+    <div class="container">
+      <h2>Conversor de Moedas</h2>
+      <form class="form-container" (submit)="convertCurrency()">
+
+        <mat-form-field>
+          <mat-label>Moeda de origem</mat-label>
+          <mat-select [(ngModel)]="fromCurrency" name="fromCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Moeda de destino</mat-label>
+          <mat-select [(ngModel)]="toCurrency" name="toCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-label>Quantidade</mat-label>
+          <input matInput type="number" placeholder="Quantidade" [(ngModel)]="amount" name="amount" (input)="convertCurrency()" required>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="submit">Converter</button>
+      </form>
+
+      <div *ngIf="convertedAmount">
+        <p>Valor convertido: {{ convertedAmount | number }}</p>
+      </div>
+    </div>
+</section>

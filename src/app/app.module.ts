@@ -17,6 +17,9 @@ import { ConversaoModule } from './conversao/conversao.module';
 import { HistoricoModule } from './historico/historico.module';
 import { MoedasModule } from './moedas/moedas.module';
 import { ExchangeRateService } from './service/exchange-rate-service.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { ExchangeRateService } from './service/exchange-rate-service.service';
     MoedasModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [
     ExchangeRateService

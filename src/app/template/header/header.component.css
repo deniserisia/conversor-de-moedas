@@ -78,7 +78,7 @@ body {
       top: 80px;
       right: 0;
       width: 100%;
-      background: #322653;;
+      background: #322653;
       padding: 20px;
       z-index: 2; /* Define um z-index maior para que o <nav> fique em cima da imagem */
     }
