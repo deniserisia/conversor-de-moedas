@@ -1,20 +1,19 @@
 /* Estilos gerais para o footer */
 footer {
-    background-color: #333;
+    background: #322653;
     color: #fff;
     padding: 20px 0;
-  }
-  
-  .footer-container {
+}
+
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* Estilos para a coluna de redes sociais */
-  .social-media {
+}
+
+.social-media {
     flex: 1;
   }
   
@@ -51,17 +50,16 @@ footer {
     margin: 0;
   }
   
-  /* Estilos para a coluna da logo */
-  .logo {
-    flex: 1;
-    text-align: right;
+  .logo-container {
+    display: flex;
+    align-items: center;
   }
   
   .logo img {
-    width: 100px; /* Ajuste o tamanho da logo conforme necessário */
-  }
-  
-  /* Estilos responsivos */
+    width: 150px;
+    height: auto;
+}
+
   @media screen and (max-width: 768px) {
     .footer-container {
       flex-direction: column;
@@ -73,4 +71,5 @@ footer {
     .logo {
       margin-bottom: 20px;
     }
-}  
+}
+

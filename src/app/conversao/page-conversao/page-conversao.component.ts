@@ -50,4 +50,9 @@ export class PageConversaoComponent implements OnInit {
       this.convertedAmount = 0; // Se algum dos campos não estiver preenchido, atribui 0 ao valor convertido
     }
   }
+
+  clearForm() {
+    this.amount = 0;
+    this.convertedAmount = 0;
+  }
 }
