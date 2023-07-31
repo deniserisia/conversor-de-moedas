@@ -42,7 +42,7 @@
     font-size: 16px;
   }
   
-  .button {
+  button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -53,11 +53,11 @@
     cursor: pointer;
   }
   
-  .button:hover {
+  button:hover {
     background-color: #0056b3;
   }
   
-  .div[ngIf] {
+  div[ngIf] {
     text-align: center;
     margin-top: 20px;
     font-size: 18px;
