@@ -30,12 +30,12 @@
     align-items: center;
   }
   
-  mat-form-field {
+  .mat-form-field {
     width: 100%;
     margin-bottom: 20px;
   }
   
-  mat-select,
+  .mat-select,
   input[type="number"] {
     width: 100%;
     padding: 10px;

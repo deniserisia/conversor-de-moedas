@@ -1,21 +1,20 @@
-/* Estilos gerais para o footer */
 footer {
     background: #322653;
     color: #fff;
-    padding: 20px 0;
 }
-
+  
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centralizar os elementos horizontalmente */
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    font-size: 1.2rem;
 }
-
+  
 .social-media {
     flex: 1;
-  }
+}
   
   .social-media h3 {
     font-size: 18px;
@@ -53,13 +52,18 @@ footer {
   .logo-container {
     display: flex;
     align-items: center;
+    order: 1; /* Mover para a esquerda */
   }
   
   .logo img {
     width: 150px;
     height: auto;
-}
-
+  }
+  
+  .footer-iconTop {
+    flex: 1;
+  }
+  
   @media screen and (max-width: 768px) {
     .footer-container {
       flex-direction: column;
@@ -68,8 +72,8 @@ footer {
   
     .social-media,
     .address-contact,
-    .logo {
+    .logo,
+    .footer-iconTop {
       margin-bottom: 20px;
     }
-}
-
+}  
