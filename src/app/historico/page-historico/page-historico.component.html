@@ -1,2 +1,57 @@
-<p>page-historico works!</p>
-<h1>looooooooo</h1>
+<section class="historico-section">
+    <div class="container">
+      <h2>Histórico de Conversões</h2>
+      <div class="table-container mat-elevation-z8">
+        <table mat-table [dataSource]="historico" class="historico-table">
+  
+          <!-- Data Column -->
+          <ng-container matColumnDef="data">
+            <th mat-header-cell *matHeaderCellDef>Data</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.data | date: 'dd/MM/yyyy' }}</td>
+          </ng-container>
+  
+          <!-- Hora Column -->
+          <ng-container matColumnDef="hora">
+            <th mat-header-cell *matHeaderCellDef>Hora</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.data | date: 'HH:mm' }}</td>
+          </ng-container>
+  
+          <!-- Moeda de Origem Column -->
+          <ng-container matColumnDef="moedaOrigem">
+            <th mat-header-cell *matHeaderCellDef>Moeda de Origem</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.moedaOrigem }}</td>
+          </ng-container>
+  
+          <!-- Valor de Entrada Column -->
+          <ng-container matColumnDef="valorEntrada">
+            <th mat-header-cell *matHeaderCellDef>Valor de Entrada</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.valorEntrada | number }}</td>
+          </ng-container>
+  
+          <!-- Moeda de Destino Column -->
+          <ng-container matColumnDef="moedaDestino">
+            <th mat-header-cell *matHeaderCellDef>Moeda de Destino</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.moedaDestino }}</td>
+          </ng-container>
+  
+          <!-- Valor de Saída Column -->
+          <ng-container matColumnDef="valorSaida">
+            <th mat-header-cell *matHeaderCellDef>Valor de Saída</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.valorSaida | number }}</td>
+          </ng-container>
+  
+          <!-- Taxa de Conversão Column -->
+          <ng-container matColumnDef="taxaConversao">
+            <th mat-header-cell *matHeaderCellDef>Taxa de Conversão</th>
+            <td mat-cell *matCellDef="let conversao">{{ conversao.taxaConversao | number }}</td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao']"></tr>
+        </table>
+      </div>
+  
+      <button class="limpar-button" (click)="limparHistorico()">Limpar Histórico</button>
+    </div>
+  </section>
+  

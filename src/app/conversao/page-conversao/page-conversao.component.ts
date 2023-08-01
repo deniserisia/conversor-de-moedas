@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyExchangeService, ExchangeRate } from 'src/app/service/currency-exchange.service';
+import { HistoricoService } from 'src/app/service/historico.service';
+
+interface Conversao {
+  data: Date;
+  moedaOrigem: string;
+  valorEntrada: number;
+  moedaDestino: string;
+  valorSaida: number;
+  taxaConversao: number;
+}
+
 
 @Component({
   selector: 'app-page-conversao',
@@ -18,7 +29,9 @@ export class PageConversaoComponent implements OnInit {
     rates: {}
   };
 
-  constructor(private currencyExchangeService: CurrencyExchangeService) { }
+  constructor(
+    private currencyExchangeService: CurrencyExchangeService,
+    private historicoService: HistoricoService) { }
 
   ngOnInit() {
     this.getCurrencies();
@@ -46,6 +59,38 @@ export class PageConversaoComponent implements OnInit {
             if (response && response.rates && response.rates[this.toCurrency]) {
               this.exchangeRate = response;
               this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+            } else {
+              console.error("Invalid API response or missing exchange rate data.");
+              this.convertedAmount = 0;
+            }
+          },
+          (error) => {
+            console.error(error);
+            this.convertedAmount = 0;
+          }
+        );
+    } else {
+      this.convertedAmount = 0;
+    }
+
+    if (this.amount && this.fromCurrency && this.toCurrency) {
+      this.currencyExchangeService.getExchangeRate(this.fromCurrency, this.toCurrency)
+        .subscribe(
+          (response) => {
+            if (response && response.rates && response.rates[this.toCurrency]) {
+              this.exchangeRate = response;
+              this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+
+              // Adiciona a conversão ao histórico
+              const conversao: Conversao = {
+                data: new Date(),
+                moedaOrigem: this.fromCurrency,
+                valorEntrada: this.amount,
+                moedaDestino: this.toCurrency,
+                valorSaida: this.convertedAmount,
+                taxaConversao: this.exchangeRate.rates[this.toCurrency]
+              };
+              this.historicoService.adicionarConversao(conversao);
             } else {
               console.error("Invalid API response or missing exchange rate data.");
               this.convertedAmount = 0;

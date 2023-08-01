@@ -90,3 +90,13 @@
     margin-top: 10px;
 }
  
+/* Estilos para centralizar o texto na esquerda */
+.cambio-text {
+  text-align: left;
+}
+
+/* Estilos para centralizar o título "Câmbio" acima do texto */
+.title {
+  text-align: center;
+}
+
