@@ -75,6 +75,17 @@
     text-align: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.converted-value {
+  text-align: center;
+}
+
+
 .button-container .test{
     margin-top: 10px;
 }

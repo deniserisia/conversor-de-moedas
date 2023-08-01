@@ -7,11 +7,16 @@ import { CurrencyExchangeService, ExchangeRate } from 'src/app/service/currency-
   styleUrls: ['./page-conversao.component.css']
 })
 export class PageConversaoComponent implements OnInit {
-  currencies!: string[]; // Lista de todas as moedas disponíveis
-  fromCurrency!: string; // Moeda de origem selecionada
-  toCurrency!: string; // Moeda de destino selecionada
-  amount!: number; // Quantidade informada pelo usuário
-  convertedAmount: number = 0; // Valor convertido a ser exibido para o usuário (inicializado com 0)
+  currencies!: string[]; 
+  fromCurrency!: string; 
+  toCurrency!: string; 
+  amount!: number; 
+  convertedAmount: number = 0;
+  exchangeRate: ExchangeRate = {
+    base: '',
+    date: '',
+    rates: {}
+  };
 
   constructor(private currencyExchangeService: CurrencyExchangeService) { }
 
@@ -38,19 +43,24 @@ export class PageConversaoComponent implements OnInit {
       this.currencyExchangeService.getExchangeRate(this.fromCurrency, this.toCurrency)
         .subscribe(
           (response) => {
-            const exchangeRate: ExchangeRate = response;
-            this.convertedAmount = this.amount * exchangeRate.rates[this.toCurrency];
+            if (response && response.rates && response.rates[this.toCurrency]) {
+              this.exchangeRate = response;
+              this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+            } else {
+              console.error("Invalid API response or missing exchange rate data.");
+              this.convertedAmount = 0;
+            }
           },
           (error) => {
             console.error(error);
-            this.convertedAmount = 0; // Em caso de erro, atribui 0 ao valor convertido
+            this.convertedAmount = 0;
           }
         );
     } else {
-      this.convertedAmount = 0; // Se algum dos campos não estiver preenchido, atribui 0 ao valor convertido
+      this.convertedAmount = 0;
     }
   }
-
+  
   clearForm() {
     this.amount = 0;
     this.convertedAmount = 0;
