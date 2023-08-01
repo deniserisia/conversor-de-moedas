@@ -75,7 +75,28 @@
     text-align: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.converted-value {
+  text-align: center;
+}
+
+
 .button-container .test{
     margin-top: 10px;
 }
  
+/* Estilos para centralizar o texto na esquerda */
+.cambio-text {
+  text-align: left;
+}
+
+/* Estilos para centralizar o título "Câmbio" acima do texto */
+.title {
+  text-align: center;
+}
+
