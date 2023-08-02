@@ -1,82 +1,240 @@
+/* Estilos para a seção home */
 .home {
-    position: relative;
-    padding: 40px 0;
-    color: #ffffff;
-    text-align: center;
-    height: 600px; /* Ajuste o valor para aumentar o tamanho vertical */
-    margin: 0 auto;
-    background: linear-gradient(#322653, #000000);
-    background-size: cover; /* Ajusta a imagem para cobrir toda a área */
-    background-position: center center; /* Centraliza a imagem horizontalmente e verticalmente */
-    display: flex; /* Centraliza verticalmente o conteúdo */
-    flex-direction: column; /* Alinha o conteúdo em uma coluna */
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-  }
-  
-  .home .content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px; /* Ajuste o espaçamento conforme necessário */
-  }
-  
-  .home h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .home p {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  
-  .saiba-mais {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
-  }
-  
-  .saiba-mais:hover {
-    background-color: #0056b3;
-  }
-   
+  position: relative;
+  padding: 40px 0;
+  color: #ffffff;
+  text-align: center;
+  height: 600px; /* Ajuste o valor para aumentar o tamanho vertical */
+  margin: 0 auto;
+  background: linear-gradient(#322653, #000000);
+  background-size: cover; /* Ajusta a imagem para cobrir toda a área */
+  background-position: center center; /* Centraliza a imagem horizontalmente e verticalmente */
+  display: flex; /* Centraliza verticalmente o conteúdo */
+  flex-direction: column; /* Alinha o conteúdo em uma coluna */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+}
 
-.moedas {
-    background-color: #eaf3ff;
-    padding: 40px 0;
-  }
-  
-  .moedas .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
- }
- .conversao {
-    background-color: #f5f5f5;
-    padding: 40px 0;
-  }
-  
-  .conversao .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .contato {
-    background-color: #eaf3ff;
-    padding: 40px 0;
-  }
-  
-  .contato .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+.home .content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px; /* Ajuste o espaçamento conforme necessário */
+}
+
+.home h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.saiba-mais {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+}
+
+.saiba-mais:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para a seção section-conversor */
+.section-conversor {
+  background: #C1D316;
+  background: linear-gradient(to bottom right, #C1D316, #E6F77D);
+  padding: 50px 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-conversor-left-content img {
+  max-width: 350px; /* Diminuindo o tamanho da imagem */
+  border-radius: 10%; /* Adicionando um efeito de borda arredondada */
+  margin-right: 60px; /* Espaçamento entre a foto e o texto */
+}
+
+.section-conversor-right-content {
+  flex: 1;
+  text-align: left;
+}
+
+.section-conversor-right-content h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #322653;
+}
+
+.section-conversor-right-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Espaçamento entre o texto e as redes sociais */
+  text-align: center;
+}
+
+.saiba-mais-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+}
+
+.saiba-mais-btn:hover {
+  background-color: #0056b3;
+}
+
+.section-historico {
+  background-color: #eaf3ff;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section-historico-right-content {
+  flex: 1;
+  text-align: right;
+}
+
+.section-historico-right-content img {
+  max-width: 350px; /* Diminuindo o tamanho da imagem */
+  border-radius: 10%; /* Adicionando um efeito de borda arredondada */
+  margin-left: 60px; /* Espaçamento entre a foto e o texto */
+}
+
+.section-historico-left-content {
+  flex: 1;
+  text-align: left;
+}
+
+.section-historico-left-content h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #322653;
+}
+
+.section-historico-left-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Espaçamento entre o texto e as redes sociais */
+}
+
+.section-historico-saiba-mais-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao botão */
+}
+
+.section-historico-saiba-mais-btn:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
   }
 
+  .section-conversor-left-content img {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
 
-  
-  
+  .section-conversor-right-content {
+      text-align: center;
+  }
+
+  .section-conversor-right-content h2 {
+      font-size: 28px;
+  }
+
+  .section-historico-right-content img {
+      max-width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+  }
+
+  .section-historico-left-content {
+      text-align: center;
+  }
+
+  .section-historico-left-content h2 {
+      font-size: 28px;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .section-conversor-left-content img {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .section-conversor-right-content {
+      text-align: center;
+  }
+
+  .section-conversor-right-content h2 {
+      font-size: 28px;
+  }
+
+  .section-historico-right-content img {
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .section-historico-left-content {
+      text-align: center;
+  }
+
+  .section-historico-left-content h2 {
+      font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .section-conversor-right-content h2 {
+      font-size: 32px;
+  }
+
+  .section-historico-left-content h2 {
+      font-size: 32px;
+  }
+}

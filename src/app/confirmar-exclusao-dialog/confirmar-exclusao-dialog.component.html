@@ -1,6 +1,13 @@
 <h1 mat-dialog-title>Confirmar Exclusão</h1>
 <div mat-dialog-content>
   Deseja realmente excluir esta conversão?
+  <br>
+  Data: {{ conversao.data | date: 'dd/MM/yyyy' }}
+  <br>
+  Hora: {{ conversao.data | date: 'HH:mm' }}
+  <br>
+  Moeda de Origem: {{ conversao.moedaOrigem }}
+  <br>
 </div>
 <div mat-dialog-actions align="end">
   <button mat-button (click)="cancelarExclusao()">Cancelar</button>

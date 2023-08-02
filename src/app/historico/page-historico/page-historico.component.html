@@ -2,7 +2,7 @@
     <div class="container">
       <h2>Histórico de Conversões</h2>
       <div class="table-container mat-elevation-z8">
-        <table mat-table [dataSource]="historico" class="historico-table">
+        <table mat-table [dataSource]="historico" #tabelaHistorico class="historico-table">
   
           <!-- Data Column -->
           <ng-container matColumnDef="data">
