@@ -53,6 +53,12 @@
   padding: 50px 0;
 }
 
+.section-conversor-historico {
+  background: #C1D316;
+  background: linear-gradient(to bottom right, #C1D316, #E6F77D);
+  padding: 50px 0;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
