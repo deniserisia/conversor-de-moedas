@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+import { MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ListagemMoedasService } from 'src/app/service/listagem-moedas.service';
+import { Moeda, MoedasService } from 'src/app/service/moeda.service';
+
 
 @Component({
   selector: 'app-page-moedas',
@@ -10,39 +12,26 @@ import { ListagemMoedasService } from 'src/app/service/listagem-moedas.service';
   styleUrls: ['./page-moedas.component.css']
 })
 export class PageMoedasComponent implements OnInit {
-  dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['symbol', 'name'];
-  moedas: any[] = [];
+  dataSource!: MatTableDataSource<Moeda>;
+  displayedColumns: string[] = ['symbol', 'name']; // Adicione mais colunas conforme necessário
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private listagemMoedasService: ListagemMoedasService) {}
+  moedas: Moeda[] = [
+    { symbol: 'USD', name: 'US Dollar' },
+    { symbol: 'EUR', name: 'Euro' },
+    // Adicione mais moedas conforme necessário
+  ];
 
   ngOnInit() {
-    this.getCurrencies();
+    this.dataSource = new MatTableDataSource(this.moedas);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
-  getCurrencies() {
-    this.listagemMoedasService.getAllSymbols().subscribe(
-      (response) => {
-        this.moedas = Object.keys(response.symbols).map((symbol) => ({
-          symbol: symbol,
-          name: response.symbols[symbol],
-        }));
-
-        this.dataSource = new MatTableDataSource(this.moedas);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Conversao } from '../service/historico.service';
 
 @Component({
   selector: 'app-confirmar-exclusao-dialog',
@@ -8,7 +9,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ConfirmarExclusaoDialogComponent {
 
-  constructor(private dialogRef: MatDialogRef<ConfirmarExclusaoDialogComponent>) { }
+  conversao: Conversao;
+
+  constructor(
+    private dialogRef: MatDialogRef<ConfirmarExclusaoDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any
+  ) {
+    this.conversao = data.conversao; // Obtem a conversao do parâmetro passado
+  }
 
   confirmarExclusao() {
     this.dialogRef.close(true);

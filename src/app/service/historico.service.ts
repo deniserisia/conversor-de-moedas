@@ -30,9 +30,12 @@ export class HistoricoService {
   }
 
   excluirConversao(conversao: Conversao) {
+    console.log('Excluindo conversao - entrou:', conversao);
     const index = this.historico.indexOf(conversao);
     if (index > -1) {
       this.historico.splice(index, 1);
+      console.log('Conversao removida, histórico atualizado:', this.historico);
     }
   }
+  
 }
