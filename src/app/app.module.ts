@@ -20,6 +20,7 @@ import { ExchangeRateService } from './service/exchange-rate-service.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ConfirmarExclusaoDialogComponent } from './confirmar-exclusao-dialog/confirmar-exclusao-dialog.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppComponent,
     HeaderComponent,
     SubHeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmarExclusaoDialogComponent,
   ],
   imports: [
     BrowserModule,

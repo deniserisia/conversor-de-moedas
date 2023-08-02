@@ -14,14 +14,21 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { MatDialogModule } from '@angular/material/dialog'; // Import MatDialogModule
+import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 @NgModule({
   declarations: [
-    PageHistoricoComponent
+    PageHistoricoComponent,
   ],
   imports: [
     CommonModule,
     HistoricoRoutingModule,
+    BrowserModule,
     FormsModule,
     RouterModule,
     MatSlideToggleModule,
@@ -31,7 +38,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSelectModule,
     MatOptionModule,
     MatTableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserAnimationsModule, // Add BrowserAnimationsModule
+    MatDialogModule, // Add MatDialogModule
+    MatIconModule
   ]
 })
 export class HistoricoModule { }

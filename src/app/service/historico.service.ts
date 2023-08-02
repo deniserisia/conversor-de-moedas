@@ -28,4 +28,11 @@ export class HistoricoService {
   limparHistorico() {
     this.historico = [];
   }
+
+  excluirConversao(conversao: Conversao) {
+    const index = this.historico.indexOf(conversao);
+    if (index > -1) {
+      this.historico.splice(index, 1);
+    }
+  }
 }

@@ -45,13 +45,23 @@
             <th mat-header-cell *matHeaderCellDef>Taxa de Conversão</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.taxaConversao | number }}</td>
           </ng-container>
+
+          <ng-container matColumnDef="acao">
+            <th mat-header-cell *matHeaderCellDef>Ação</th>
+            <td mat-cell *matCellDef="let conversao">
+              <button mat-icon-button color="warn" (click)="confirmarExclusao(conversao)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
   
-          <tr mat-header-row *matHeaderRowDef="['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao']"></tr>
-          <tr mat-row *matRowDef="let row; columns: ['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao']"></tr>
-        </table>
-      </div>
-  
-      <button class="limpar-button" (click)="limparHistorico()">Limpar Histórico</button>
+          
+        <tr mat-header-row *matHeaderRowDef="['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao', 'acao']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['data', 'hora', 'moedaOrigem', 'valorEntrada', 'moedaDestino', 'valorSaida', 'taxaConversao', 'acao']"></tr>
+      </table>
     </div>
+
+    <button class="limpar-button" (click)="limparHistorico()">Limpar Histórico</button>
+  </div>
   </section>
   
