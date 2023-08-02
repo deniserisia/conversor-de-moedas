@@ -1,79 +1,75 @@
-footer {
-    background: #322653;
-    color: #fff;
+
+.footer {
+  background-color: #322653;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: Arial, sans-serif; 
 }
-  
-.footer-container {
-    display: flex;
-    justify-content: center; /* Centralizar os elementos horizontalmente */
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
-    font-size: 1.2rem;
+
+.contact-info {
+  flex: 1;
+  text-align: left;
 }
-  
-.social-media {
-    flex: 1;
+.contact-info p{
+  font-size: 20px;
+  margin-top: 25px;
+  list-style: none;
+  padding: 0;
+  margin-left: 35px;
+  color: #C1D316;
 }
-  
-  .social-media h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .social-media ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .social-media li {
-    margin-bottom: 5px;
-  }
-  
-  .social-media a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  /* Estilos para a coluna de endereço e contato */
-  .address-contact {
-    flex: 1;
-  }
-  
-  .address-contact h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .address-contact p {
-    margin: 0;
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;
-    order: 1; /* Mover para a esquerda */
-  }
-  
-  .logo img {
-    width: 150px;
-    height: auto;
-  }
-  
-  .footer-iconTop {
-    flex: 1;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .social-media,
-    .address-contact,
-    .logo,
-    .footer-iconTop {
-      margin-bottom: 20px;
-    }
-}  
+
+.social-icons {
+  margin-top: 25px;
+  list-style: none;
+  padding: 0;
+  margin-left: 35px;
+}
+
+.social-icons li {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.social-icons li a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-icons li a:hover {
+  color: #C1D316;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.rights {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Estilos adicionais para o link do footer */
+.rights a {
+  color: #C1D316;
+  text-decoration: none;
+}
+
+.rights a:hover {
+  text-decoration: underline;
+}
