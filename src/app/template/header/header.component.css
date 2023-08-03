@@ -1,12 +1,9 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
+
+
   header {
     background: #322653;
     position: relative; /* Adiciona esta propriedade para criar um contexto de posicionamento para o <nav> */
+    height: 80px; /* Defina uma altura para o header */
   }
   
   nav {
@@ -16,8 +13,11 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative; /* Adiciona esta propriedade para que o <nav> fique em cima da imagem de background */
-    z-index: 1; /* Define um z-index maior para que o <nav> fique em cima da imagem */
+    position: absolute; /* Altere para absolute para que o nav fique posicionado dentro do header */
+    top: 0; /* Posicione o nav no topo do header */
+    left: 0; /* Posicione o nav no canto esquerdo do header */
+    right: 0; /* Posicione o nav no canto direito do header */
+    z-index: 1;
   }
   
   .logo-container {
@@ -72,6 +72,7 @@ body {
     }
   
     .menu {
+      position: fixed;
       display: none;
       flex-direction: column;
       position: fixed;
@@ -94,6 +95,8 @@ body {
   
     #check:checked ~ .menu {
       display: flex;
+      position: absolute;
+      text-align: center;
     }
   }
   
