@@ -1,29 +1,49 @@
-<div class="container">
-  <mat-form-field>
-    <mat-label>Pesquisar moeda</mat-label>
-   
-  </mat-form-field>
+<div class="container pt pb">
+  <h2 class="text-center">Listagem de Moedas</h2>
 
-  <mat-table [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Símbolo</mat-header-cell>
-      <mat-cell *matCellDef="let moeda">{{ moeda.symbol }}</mat-cell>
-    </ng-container>
+  <div class="container-mod">
+    <mat-form-field appearance="fill" class="busca">
+      <mat-label class="text-dark">Buscar moedas</mat-label>
+      <input matInput [(ngModel)]="busca" (input)="buscarCoins()">
+    </mat-form-field>
+    <button mat-icon-button class="limpar-busca" (click)="limparBusca()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
 
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
-      <mat-cell *matCellDef="let moeda">{{ moeda.name }}</mat-cell>
-    </ng-container>
+  <div *ngIf="loading" class="spinner-container">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Carregando...</p>
+  </div>
 
-    <!-- Adicione mais colunas conforme necessário -->
+  <table class="table mt-4 table-rounded" *ngIf="!loading">
+    <thead>
+      <tr>
+        <th class="text-center thread-color">Símbolo</th>
+        <th class="thread-color">Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let coin of coinList | paginate: { itemsPerPage: itensPorPagina, currentPage: paginaAtual }; let i = index">
+        <td class="text-center fixed-width">{{ coin.code }}</td>
+        <td class="fixed-width">{{ coin.description }}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-  </mat-table>
-
-  <mat-table [dataSource]="dataSource" matSort>
-    <!-- ... -->
-  </mat-table>
-
-  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator>
+  <div class="container-mod center">
+    <mat-form-field appearance="fill" class="itens">
+      <mat-label class="text-dark">Itens por página:</mat-label>
+      <mat-select [(ngModel)]="itensPorPagina" (selectionChange)="atualizarPaginacao(1)">
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="15">15</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <pagination-controls (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
+      [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
+    </pagination-controls>
+  </div>
 </div>

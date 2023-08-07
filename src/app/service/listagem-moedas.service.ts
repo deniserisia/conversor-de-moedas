@@ -1,18 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { Moedas } from '../moedas/page-moedas/moedas';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ListagemMoedasService {
 
-  private symbolsApiUrl = 'https://api.exchangerate.host/symbols';
+  private apiUrl = 'https://api.exchangerate.host/';
 
   constructor(private http: HttpClient) { }
 
-  getAllSymbols(): Observable<any> {
-    return this.http.get<any>(this.symbolsApiUrl);
+  getCoins(): Observable<Moedas[]> {
+    return this.http.get<any>(this.apiUrl + 'symbols').pipe(
+      map((response) => {
+        return Object.keys(response.symbols).map((key) => ({
+          code: key,
+          description: response.symbols[key].description,
+        }));
+      })
+    );
   }
 }
 
