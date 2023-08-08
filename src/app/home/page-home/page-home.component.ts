@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ExchangeRate, CurrencyExchangeService } from 'src/app/service/currency-exchange.service';
 import { ExchangeRateService } from 'src/app/service/exchange-rate-service.service';
+import { HistoricoService, Conversao } from 'src/app/service/historico.service';
 
 @Component({
   selector: 'app-page-home',
@@ -7,32 +9,96 @@ import { ExchangeRateService } from 'src/app/service/exchange-rate-service.servi
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
-  cotacoes: any[] = [];
+  currencies!: string[]; 
+  fromCurrency!: string; 
+  toCurrency!: string; 
+  amount!: number; 
+  convertedAmount: number = 0;
+  exchangeRate: ExchangeRate = {
+    base: '',
+    date: '',
+    rates: {}
+  };
 
-  constructor(private exchangeRateService: ExchangeRateService) { }
+  constructor(
+    private currencyExchangeService: CurrencyExchangeService,
+    private historicoService: HistoricoService) { }
 
   ngOnInit() {
-    this.getCotacoes();
+    this.getCurrencies();
   }
 
-  getCotacoes() {
-    // Defina as moedas que você deseja obter as cotações (dólar, euro, Ibovespa)
-    const moedas = 'USD,EUR,BRL';
+  getCurrencies() {
+    this.currencyExchangeService.getAllCurrencies()
+      .subscribe(
+        (response) => {
+          this.currencies = Object.keys(response.rates);
+          this.fromCurrency = this.currencies[0]; // Define a primeira moeda da lista como moeda de origem padrão
+          this.toCurrency = this.currencies[1]; // Define a segunda moeda da lista como moeda de destino padrão
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+  }
 
-    this.exchangeRateService.getExchangeRates('BRL', moedas).subscribe(
-      (response) => {
-        // O objeto de resposta conterá as cotações das moedas em relação ao real
-        // Exemplo: response = { base_code: 'BRL', conversion_rates: { USD: 5.50, EUR: 6.20, BRL: 1.00 } }
+  convertCurrency() {
+    if (this.amount && this.fromCurrency && this.toCurrency) {
+      this.currencyExchangeService.getExchangeRate(this.fromCurrency, this.toCurrency)
+        .subscribe(
+          (response) => {
+            if (response && response.rates && response.rates[this.toCurrency]) {
+              this.exchangeRate = response;
+              this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+            } else {
+              console.error("Invalid API response or missing exchange rate data.");
+              this.convertedAmount = 0;
+            }
+          },
+          (error) => {
+            console.error(error);
+            this.convertedAmount = 0;
+          }
+        );
+    } else {
+      this.convertedAmount = 0;
+    }
 
-        // Formata os dados para exibir na interface
-        this.cotacoes = Object.keys(response.conversion_rates).map((moeda) => ({
-          moeda: moeda,
-          cotacao: response.conversion_rates[moeda]
-        }));
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    if (this.amount && this.fromCurrency && this.toCurrency) {
+      this.currencyExchangeService.getExchangeRate(this.fromCurrency, this.toCurrency)
+        .subscribe(
+          (response) => {
+            if (response && response.rates && response.rates[this.toCurrency]) {
+              this.exchangeRate = response;
+              this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+
+              // Adiciona a conversão ao histórico
+              const conversao: Conversao = {
+                data: new Date(),
+                moedaOrigem: this.fromCurrency,
+                valorEntrada: this.amount,
+                moedaDestino: this.toCurrency,
+                valorSaida: this.convertedAmount,
+                taxaConversao: this.exchangeRate.rates[this.toCurrency]
+              };
+              this.historicoService.adicionarConversao(conversao);
+            } else {
+              console.error("Invalid API response or missing exchange rate data.");
+              this.convertedAmount = 0;
+            }
+          },
+          (error) => {
+            console.error(error);
+            this.convertedAmount = 0;
+          }
+        );
+    } else {
+      this.convertedAmount = 0;
+    }
+  }
+  
+  clearForm() {
+    this.amount = 0;
+    this.convertedAmount = 0;
   }
 }
