@@ -13,8 +13,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { PageHistoricoComponent } from '../historico/page-historico/page-historico.component';
+import { HomeModule } from '../home/home.module';
 // Importe outros módulos do Angular Material que você esteja usando no componente
-
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PageHistoricoComponent } from '../historico/page-historico/page-histori
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatIconModule
   ]
 })
 export class ConversaoModule { }

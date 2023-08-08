@@ -45,7 +45,8 @@ html {
 
 span {
   margin: 10px auto;
-  color: var(--pri--color);
+  /*
+  color: var(--pri--color); */
 }
 
 .social-icons {

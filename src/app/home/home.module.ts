@@ -12,11 +12,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
-
+import { PageConversaoComponent } from '../conversao/page-conversao/page-conversao.component';
+import { ConversaoModule } from '../conversao/conversao.module';
 
 @NgModule({
   declarations: [
-    PageHomeComponent
+    PageHomeComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +30,8 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    ConversaoModule // Certifique-se de que ConversaoModule está sendo importado aqui
   ]
 })
 export class HomeModule { }

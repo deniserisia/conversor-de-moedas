@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { CurrencyExchangeService, ExchangeRate } from 'src/app/service/currency-exchange.service';
 import { HistoricoService } from 'src/app/service/historico.service';
 
@@ -27,11 +29,19 @@ export class PageConversaoComponent implements OnInit {
     date: '',
     rates: {}
   };
+  isValueOver10000: boolean = false;
   
-
   constructor(
     private currencyExchangeService: CurrencyExchangeService,
-    private historicoService: HistoricoService) { }
+    private historicoService: HistoricoService,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+    ) {
+      this.matIconRegistry.addSvgIcon(
+        'high-value',
+        this.domSanitizer.bypassSecurityTrustResourceUrl('assets/imgs/sack-dollar-solid.svg')
+      );
+    }
 
   ngOnInit() {
     this.getCurrencies();
@@ -51,7 +61,6 @@ export class PageConversaoComponent implements OnInit {
       );
   }
 
-
   convertCurrency() {
     if (this.amount && this.fromCurrency && this.toCurrency) {
       this.currencyExchangeService.getExchangeRate(this.fromCurrency, this.toCurrency)
@@ -60,6 +69,9 @@ export class PageConversaoComponent implements OnInit {
             if (response && response.rates && response.rates[this.toCurrency]) {
               this.exchangeRate = response;
               this.convertedAmount = this.amount * this.exchangeRate.rates[this.toCurrency];
+
+              // Verifica se o valor convertido é maior que 10000 dólares
+              this.isValueOver10000 = this.checkValueOver10000(this.toCurrency, this.convertedAmount);
 
               const conversao: Conversao = {
                 data: new Date(),
@@ -88,5 +100,12 @@ export class PageConversaoComponent implements OnInit {
   clearForm() {
     this.amount = 0;
     this.convertedAmount = 0;
+    this.isValueOver10000 = false; // Reseta o estado do ícone
+  }
+
+  // Função para verificar se o valor convertido é maior que 10000 dólares
+  checkValueOver10000(currency: string, amount: number): boolean {
+    // Implemente a lógica de conversão da moeda de destino para dólar e verificação aqui
+    return amount > 10000;
   }
 }
