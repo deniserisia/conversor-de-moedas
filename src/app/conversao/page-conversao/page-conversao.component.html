@@ -33,15 +33,9 @@
           <button class="05" mat-raised-button color="warn" type="button" (click)="clearForm()">Limpar</button>
       </div>
     </form>
-
-    <div class="current-rates">
-      <p> EUR 1.00 = <span> BRL  {{ 1 / currentRateToCurrency | number:'1.2-2' }} </span> </p>
-      <p> USD 1.00 = <span> BRL  {{ 1 / currentRateUsdToCurrency | number:'1.2-2' }}</span> </p>
-    </div>
-    
     <div class="converted-value" *ngIf="convertedAmount !== null">
-      <p>Valor convertido =  {{ convertedAmount | number }}</p>
+      <p>  {{ fromCurrency}} Valor convertido =  {{ convertedAmount | number }}  {{ toCurrency }}</p>
       <p>Taxa de conversão = {{ exchangeRate.rates[toCurrency] | number }}</p>
-    </div>
+    </div>       
   </div>
 </section>
