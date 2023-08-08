@@ -1,16 +1,22 @@
 
-
-  header {
-    background: #322653;
-    position: relative; /* Adiciona esta propriedade para criar um contexto de posicionamento para o <nav> */
-    height: 80px; /* Defina uma altura para o header */
-  }
+header {
+  background-color: var(--sec--color);
+  position: relative;
+  height: 80px;
+  font-family: 'Poppins', sans-serif;
+}
+.span{
+  margin: 10px auto;
+  color: var(--pri--color);
+  font-size: 22px;
+}
   
-  nav {
+nav {
+  font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
     position: absolute; /* Altere para absolute para que o nav fique posicionado dentro do header */
@@ -18,7 +24,7 @@
     left: 0; /* Posicione o nav no canto esquerdo do header */
     right: 0; /* Posicione o nav no canto direito do header */
     z-index: 1;
-  }
+}
   
   .logo-container {
     display: flex;
@@ -47,16 +53,16 @@
     padding: 10px;
     border-radius: 3px;
     text-transform: uppercase;
+    font-size: 15px;
   }
   
   .menu li a.active,
   .menu li a:hover {
-    background: #C1D316;
+    background: var(--pri--color);
     transition: .5s;
   }
   
   .checkbtn {
-    font-size: 30px;
     color: #ECEDDB;
     cursor: pointer;
     display: none;
@@ -97,6 +103,7 @@
       display: flex;
       position: absolute;
       text-align: center;
+      font-size: 15px;
     }
   }
   

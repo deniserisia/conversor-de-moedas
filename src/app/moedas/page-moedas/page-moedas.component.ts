@@ -3,7 +3,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Chart, registerables } from 'chart.js';
-import { AlphaMoedasService } from 'src/app/service/alpha-moedas.service';
 import { Moeda } from 'src/app/service/moeda.service';
 import { Moedas } from '../moedas';
 import { ListagemMoedasService } from 'src/app/service/listagem-moedas.service';
