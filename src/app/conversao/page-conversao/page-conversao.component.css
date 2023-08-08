@@ -86,6 +86,13 @@ input[type="number"] {
   font-size: 16px;
 }
 
+.high-value-icon {
+  color: #ff0000; /* Defina a cor desejada para o ícone de valor alto */
+  margin-left: 5px; /* Adicione um espaçamento entre o ícone e o texto */
+  vertical-align: middle; /* Alinhe verticalmente com o texto */
+}
+
+
 button {
   width: 100%;
   padding: 10px;

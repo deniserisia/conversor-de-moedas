@@ -3,7 +3,8 @@
   <div class="top-text">
     <h2 class="title">Converta moedas
       <br>
-      <span> de forma simples</span> </h2>
+      <span> de forma simples</span>
+    </h2>
     <p class="subtitle">Transforme valores em poucos cliques</p>
   </div>
   <div class="container">
@@ -11,38 +12,42 @@
     <form class="form-container" (submit)="convertCurrency()">
 
       <div class="teste-01">
-      <p> Moeda de Origem </p>
-      <mat-form-field class="01">
-        <mat-select class="01"  [(ngModel)]="fromCurrency" name="fromCurrency">
-          <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+        <p> Moeda de Origem </p>
+        <mat-form-field class="01">
+          <mat-select class="01"  [(ngModel)]="fromCurrency" name="fromCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="teste-02">
-      <p> Moeda de Destino </p>
-      <mat-form-field  class="02">
-        <mat-select  [(ngModel)]="toCurrency" name="toCurrency">
-          <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+      <div class="teste-02">
+        <p> Moeda de Destino </p>
+        <mat-form-field  class="02">
+          <mat-select  [(ngModel)]="toCurrency" name="toCurrency">
+            <mat-option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-    <div class="teste-03">
-      <p> Quantidade</p>
-      <mat-form-field class="03 mat-03">
-        <input matInput type="number" placeholder="Quantidade" [(ngModel)]="amount" name="amount" required>
-      </mat-form-field>
-    </div>
+      <div class="teste-03">
+        <p> Quantidade</p>
+        <mat-form-field class="03 mat-03">
+          <input matInput type="number" placeholder="Quantidade" [(ngModel)]="amount" name="amount" required>
+        </mat-form-field>
+      </div>
     
-    <div class="button-container">
-      <button class="04 button-04" mat-raised-button color="primary" type="submit">Converter</button>
-      <button class="05 button-05" mat-raised-button color="warn" type="button" (click)="clearForm()">Limpar</button>
-    </div>
+      <div class="button-container">
+        <button class="04 button-04" mat-raised-button color="primary" type="submit">Converter</button>
+        <button class="05 button-05" mat-raised-button color="warn" type="button" (click)="clearForm()">Limpar</button>
+      </div>
     
     </form>
     <div class="converted-value" *ngIf="convertedAmount !== null">
-      <p>  {{ fromCurrency}} <span> Valor convertido </span> =  {{ convertedAmount | number }}  {{ toCurrency }} <span> | </span> A <span> Taxa de conversão </span> = {{ exchangeRate.rates[toCurrency] | number }}</p>
-    </div>       
+      <p>
+        {{ fromCurrency }} <span> Valor convertido </span> = {{ convertedAmount | number }} {{ toCurrency }}
+        <mat-icon *ngIf="isValueOver10000" svgIcon="high-value" class="high-value-icon"></mat-icon>
+        <span> | </span> A <span> Taxa de conversão </span> = {{ exchangeRate.rates[toCurrency] | number }}
+      </p>
+    </div>    
   </div>
 </section>
