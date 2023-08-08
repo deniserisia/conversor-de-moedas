@@ -1,15 +1,51 @@
 .converter-section {
-  display: flex;
+  position: relative; /* Adicione esta linha */
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  background-image: url('/assets/imgs/home-coins.png');
+  background-image: url('/assets/imgs/icons-foto.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Altere a opacidade conforme desejado */
+}
+
+.top-text {
+  text-align: center;
+  padding: 20px;
+  color: #01E0C1;
+  position: relative; /* Adicione esta linha */
+  z-index: 1; /* Adicione esta linha */
+}
+
+span{
+  color: #01E0C1;
+}
+.top-text .title{
+  font-size: 32px;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.top-text .subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+
 .container {
+  position: relative; /* Adicione esta linha */
+  z-index: 1; /* Adicione esta linha */
   width: 80%;
+  margin-top: 50px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
@@ -17,6 +53,17 @@
   background: none;
   box-shadow: 0px 2px 16px 0px rgba(0, 143, 123, 0.25);
 }
+
+p{
+  color: #fff;
+}
+
+.button-04,
+.button-05 {
+  color: #000; /* Alteração da cor do texto para preto */
+}
+
+
 
 .form-container {
   display: flex;
@@ -29,13 +76,13 @@
 h2.title {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+   color: #fff;
 }
 
 .mat-select,
 input[type="number"] {
   width: 100%;
-  padding: 10px;
+  padding: 1px;
   font-size: 16px;
 }
 
@@ -43,16 +90,12 @@ button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  color: #000;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
 
 div[ngIf] {
   text-align: center;
@@ -68,6 +111,10 @@ div[ngIf] {
   text-align: center;
 }
 
+.converted-value p {
+  font-size: 15px;
+}
+
 .mat-form-field,
 .mat-form-field input,
 .mat-select,
@@ -75,8 +122,6 @@ div[ngIf] {
   flex: 1;
   margin: 10px;
   padding: 10px;
-  border: 2px solid #007bff;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 6px;
   transition: background-color 0.3s ease;
   width: 100%;
@@ -98,11 +143,12 @@ div[ngIf] {
   margin: 0 5px;
   font-size: 14px;
   padding: 8px 12px;
+  background: #01E0C1;
 }
 
 .mat-form-field:hover,
 .button-container button:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #fff
 }
 
 @media screen and (max-width: 600px) {

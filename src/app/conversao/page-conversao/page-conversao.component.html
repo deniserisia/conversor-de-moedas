@@ -1,4 +1,11 @@
 <section class="converter-section">
+  <div class="overlay"></div> 
+  <div class="top-text">
+    <h2 class="title">Converta moedas
+      <br>
+      <span> de forma simples</span> </h2>
+    <p class="subtitle">Transforme valores em poucos cliques</p>
+  </div>
   <div class="container">
     <h2 class="title">Conversor de Moedas</h2>
     <form class="form-container" (submit)="convertCurrency()">
@@ -23,19 +30,19 @@
 
     <div class="teste-03">
       <p> Quantidade</p>
-      <mat-form-field class="03">
+      <mat-form-field class="03 mat-03">
         <input matInput type="number" placeholder="Quantidade" [(ngModel)]="amount" name="amount" required>
       </mat-form-field>
     </div>
-
-      <div class="button-container">
-          <button class="04" mat-raised-button color="primary" type="submit">Converter</button>
-          <button class="05" mat-raised-button color="warn" type="button" (click)="clearForm()">Limpar</button>
-      </div>
+    
+    <div class="button-container">
+      <button class="04 button-04" mat-raised-button color="primary" type="submit">Converter</button>
+      <button class="05 button-05" mat-raised-button color="warn" type="button" (click)="clearForm()">Limpar</button>
+    </div>
+    
     </form>
     <div class="converted-value" *ngIf="convertedAmount !== null">
-      <p>  {{ fromCurrency}} Valor convertido =  {{ convertedAmount | number }}  {{ toCurrency }}</p>
-      <p>Taxa de conversão = {{ exchangeRate.rates[toCurrency] | number }}</p>
+      <p>  {{ fromCurrency}} <span> Valor convertido </span> =  {{ convertedAmount | number }}  {{ toCurrency }} <span> | </span> A <span> Taxa de conversão </span> = {{ exchangeRate.rates[toCurrency] | number }}</p>
     </div>       
   </div>
 </section>

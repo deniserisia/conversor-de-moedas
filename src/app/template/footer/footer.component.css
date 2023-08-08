@@ -5,3 +5,7 @@
   font-weight: 500;
   line-height: 120%; /* 28.8px */
 }
+span {
+  margin: 10px auto;
+  color: var(--pri--color); 
+}
