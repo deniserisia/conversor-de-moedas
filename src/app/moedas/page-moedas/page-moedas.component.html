@@ -1,23 +1,23 @@
-<div class="container pt pb">
-  <h2 class="text-center">Listagem de Moedas</h2>
-
-  <div class="container-mod">
-    <mat-form-field appearance="fill" class="busca">
-      <mat-label class="text-dark">Buscar moedas</mat-label>
-      <input matInput [(ngModel)]="busca" (input)="buscarCoins()">
-    </mat-form-field>
-    <button mat-icon-button class="limpar-busca" (click)="limparBusca()">
-      <mat-icon>close</mat-icon>
-    </button>
+<section class="moedas-section">
+  <div class="overlay-2"></div> 
+  <div class="top-text-2">
+    <h2 class="title-2">Moedas
+      <br>
+      <span> da nossa Plataforma</span>
+    </h2>
+    <p class="subtitle-2">Veja as moedas disponíveis em nossa plataforma e suas descrições</p>
   </div>
 
-  <div *ngIf="loading" class="spinner-container">
-    <div class="spinner-border text-primary" role="status">
-      <span class="visually-hidden">Loading...</span>
+  <div class="container-3">  
+
+    <div class="container-mod search-container">
+      <mat-form-field appearance="fill" class="busca">
+        <mat-label class="text-dark">Buscar moedas</mat-label>
+        <input matInput [(ngModel)]="busca" (input)="buscarCoins()">
+        <button mat-icon-button class="search-button" aria-label="Buscar" (click)="buscarCoins()">
+        </button>
+      </mat-form-field>
     </div>
-    <p>Carregando...</p>
-  </div>
-
   <table class="table mt-4 table-rounded" *ngIf="!loading">
     <thead>
       <tr>
@@ -33,17 +33,26 @@
     </tbody>
   </table>
 
+  <br>
+  <br>
   <div class="container-mod center">
-    <mat-form-field appearance="fill" class="itens">
-      <mat-label class="text-dark">Itens por página:</mat-label>
-      <mat-select [(ngModel)]="itensPorPagina" (selectionChange)="atualizarPaginacao(1)">
-        <mat-option value="5">5</mat-option>
-        <mat-option value="10">10</mat-option>
-        <mat-option value="15">15</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <pagination-controls (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
-      [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
-    </pagination-controls>
+    <!-- Itens por página à direita -->
+    <div class="itens">
+      <mat-form-field appearance="fill" class="itens">
+        <mat-label class="text-dark">Itens por página:</mat-label>
+        <mat-select [(ngModel)]="itensPorPagina" (selectionChange)="atualizarPaginacao(1)">
+          <mat-option value="5">5</mat-option>
+          <mat-option value="10">10</mat-option>
+          <mat-option value="15">15</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- Paginação à esquerda -->
+    <div class="pagination-controls">
+      <pagination-controls class="ngx-pagination" (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
+        [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
+      </pagination-controls>
+    </div>    
   </div>
 </div>
+</section>
