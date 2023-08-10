@@ -3,6 +3,8 @@ import { Conversao, HistoricoService } from 'src/app/service/historico.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmarExclusaoDialogComponent } from 'src/app/confirmar-exclusao-dialog/confirmar-exclusao-dialog.component';
 import { MatTable } from '@angular/material/table';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-page-historico',
@@ -14,7 +16,17 @@ export class PageHistoricoComponent implements OnInit {
 
   @ViewChild(MatTable) tabelaHistorico!: MatTable<any>;
 
-  constructor(private historicoService: HistoricoService, public dialog: MatDialog) { }
+  constructor(
+    private historicoService: HistoricoService,
+    public dialog: MatDialog,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      'high-value',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('assets/imgs/sack-dollar-solid.svg')
+    );
+  }
 
   ngOnInit() {
     this.historico = this.historicoService.obterHistorico();
@@ -23,7 +35,7 @@ export class PageHistoricoComponent implements OnInit {
   limparHistorico() {
     this.historicoService.limparHistorico();
     this.historico = [];
-    this.tabelaHistorico.renderRows(); // Atualiza a tabela após limpar o histórico
+    this.tabelaHistorico.renderRows();
   }
 
   confirmarExclusao(conversao: Conversao) {
@@ -35,9 +47,13 @@ export class PageHistoricoComponent implements OnInit {
       if (confirmed) {
         this.historicoService.excluirConversao(conversao);
         this.historico = this.historicoService.obterHistorico();
-        this.tabelaHistorico.renderRows(); // Atualiza a tabela após excluir a conversão
+        this.tabelaHistorico.renderRows();
       }
     });
   }
 
+  isValueOver10000(currency: string, amount: number): boolean {
+    // Implemente a lógica de conversão da moeda de destino para dólar e verificação aqui
+    return amount > 10000;
+  }
 }
