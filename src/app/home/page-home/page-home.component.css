@@ -1,3 +1,5 @@
+/* PARTE DA CONVERSÃO */
+
 .converter-section {
   position: relative; /* Adicione esta linha */
   justify-content: center;
@@ -171,3 +173,121 @@ div[ngIf] {
 .title {
   text-align: center;
 }
+
+
+/* PARTE DO HISTORICO  */
+.historico-section-3 {
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-image: url('/assets/imgs/icons-foto.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  .overlay-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+  }
+  
+  .top-text-3 {
+    text-align: center;
+    padding: 20px;
+    color: #01E0C1;
+    position: relative; /* Adicione esta linha */
+    z-index: 1; /* Adicione esta linha */
+  }
+
+  span{
+    color: #01E0C1;
+  }
+  .top-text-3 .title-3{
+    font-size: 32px;
+    color: #fff;
+    margin-top: 50px;
+  }
+  
+  .top-text-3 .subtitle-3 {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  .container-2 {
+    position: relative; /* Adicione esta linha */
+  z-index: 1; /* Adicione esta linha */
+  width: 80%;
+  margin-top: 50px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--primary, #01E0C1);
+  background: none;
+  box-shadow: 0px 2px 16px 0px rgba(0, 143, 123, 0.25);
+  }
+    
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .historico-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .historico-table th,
+  .historico-table td {
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid var(--primary, #01E0C1);
+    background: none;
+    box-shadow: 0px 2px 16px 0px rgba(0, 143, 123, 0.25);
+    
+  }
+  
+  .historico-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .historico-table tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  .limpar-button-3 {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: var(--primary, #01E0C1);
+    color: #000000;
+    border: none;
+    border-radius: 8px; /* Adicionado o border-radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20%;
+  }
+  
+  .limpar-button-3:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .high-value-icon {
+    color: #ff0000; /* Defina a cor desejada para o ícone de valor alto */
+    margin-left: 5px; /* Adicione um espaçamento entre o ícone e o texto */
+    vertical-align: middle; /* Alinhe verticalmente com o texto */
+  }
+  
+  @media screen and (max-width: 600px) {
+    .limpar-button {
+      width: 100%; 
+    }
+  }
+  
+  

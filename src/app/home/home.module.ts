@@ -14,6 +14,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { RouterModule } from '@angular/router';
 import { PageConversaoComponent } from '../conversao/page-conversao/page-conversao.component';
 import { ConversaoModule } from '../conversao/conversao.module';
+import { HistoricoModule } from '../historico/historico.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { ConversaoModule } from '../conversao/conversao.module';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    ConversaoModule // Certifique-se de que ConversaoModule está sendo importado aqui
+    ConversaoModule,
+    HistoricoModule,
+    MatTableModule,
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class HomeModule { }
