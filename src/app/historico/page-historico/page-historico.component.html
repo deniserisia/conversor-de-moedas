@@ -1,6 +1,13 @@
 <section class="historico-section">
+  <div class="overlay"></div> 
+  <div class="top-text">
+    <h2 class="title">Histórico na sua Mão
+      <br>
+      <span> de uma forma simples</span>
+    </h2>
+    <p class="subtitle">Acompanhe todo o seu histórico de conversão de moedas.</p>
+  </div>
     <div class="container">
-      <h2>Histórico de Conversões</h2>
       <div class="table-container mat-elevation-z8">
         <table mat-table [dataSource]="historico" #tabelaHistorico class="historico-table">
   
@@ -38,12 +45,21 @@
           <ng-container matColumnDef="valorSaida">
             <th mat-header-cell *matHeaderCellDef>Valor de Saída</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.valorSaida | number }}</td>
+            
           </ng-container>
   
           <!-- Taxa de Conversão Column -->
           <ng-container matColumnDef="taxaConversao">
             <th mat-header-cell *matHeaderCellDef>Taxa de Conversão</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.taxaConversao | number }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="valorSaidaIcon">
+            <th mat-header-cell *matHeaderCellDef>Valor de Saída</th>
+            <td mat-cell *matCellDef="let conversao">
+              <span>{{ conversao.valorSaida | number }}</span>
+              <mat-icon *ngIf="isValueOver10000(conversao.moedaDestino, conversao.valorSaida)" svgIcon="high-value" class="high-value-icon"></mat-icon>
+            </td>
           </ng-container>
 
           <ng-container matColumnDef="acao">

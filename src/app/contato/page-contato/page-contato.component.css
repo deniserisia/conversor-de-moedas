@@ -1,7 +1,14 @@
 .contact-section {
-  background: #C1D316;
-  background: linear-gradient(to bottom right, #C1D316, #E6F77D);
+  background: linear-gradient(to right, #000000, #333333);
   padding: 50px 0;
+  position: relative; 
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+span{
+  color: #01E0C1;
 }
 
 .container {
@@ -11,6 +18,7 @@
   justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 80px;
 }
 
 .left-content img {
@@ -28,7 +36,6 @@
   font-size: 38px;
   margin-bottom: 20px;
   text-align: center;
-  color: #322653;;
 }
 
 .right-content p {
@@ -36,6 +43,7 @@
   line-height: 1.6;
   margin-bottom: 10px; /* Espaçamento entre o texto e as redes sociais */
   text-align: center;
+  color: #fff;
 }
 
 .social-media {
