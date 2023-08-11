@@ -10,6 +10,15 @@ header {
   color: var(--pri--color);
   font-size: 22px;
 }
+
+.green-text{
+  color: var(--primary, #01E0C1);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 28.8px */
+  padding: 8px;
+}
   
 nav {
   font-family: 'Poppins', sans-serif;
@@ -58,7 +67,7 @@ nav {
   
   .menu li a.active,
   .menu li a:hover {
-    background: var(--pri--color);
+    border-bottom: 2px solid var(--pri--color); 
     transition: .5s;
   }
   
