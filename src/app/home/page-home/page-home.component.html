@@ -48,6 +48,20 @@
 </section>
 
 
+<section class="moedas-section">
+  <div class="overlay-2"></div> 
+  <div class="center-content-2">
+    <div class="content-2">
+      <div class="text-2">
+        <h2 class="title-2">Moedas</h2>
+        <p class="subtitle-2">Veja as moedas disponíveis em nossa plataforma e suas descrições.</p>
+      </div>
+      <a class="limpar-button-4" [routerLink]="['/moedas']"> Veja Agora</a>
+    </div>
+  </div>
+</section>
+
+
 
 <section class="historico-section-3">
   <div class="overlay-3"></div> 
@@ -128,7 +142,7 @@
       </table>
     </div>
 
-    <button class="limpar-button-3" (click)="limparHistorico()">Limpar Histórico</button>
+    <button class="limpar-button-3" [routerLink]="['/historico-de-conversoes']">Veja seu Histórico</button>
   </div>
   </section>
   
