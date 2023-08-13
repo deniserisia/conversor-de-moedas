@@ -383,6 +383,14 @@ div[ngIf] {
     padding: 10px; 
   }
 
+  .button-container button {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-left: 10px;
+    align-items: center;
+  }
+
+
   /* PARTE DAS MOEDAS */
   .text-2 {
     width: 100%; 
