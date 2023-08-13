@@ -372,4 +372,47 @@ div[ngIf] {
     }
   }
   
+@media screen and (max-width: 768px) {
+  /* PARTE DA CONVERSÃO */
+  .top-text {
+    padding: 10px; 
+  }
+
+  .container {
+    margin-top: 20px;
+    padding: 10px; 
+  }
+
+  /* PARTE DAS MOEDAS */
+  .text-2 {
+    width: 100%; 
+    padding: 10px; 
+  }
+
+  .content-2 {
+    flex-direction: column; 
+  }
+
+  /* PARTE DO HISTÓRICO */
+  .top-text-3 {
+    padding: 10px; 
+  }
+
+  .container-2 {
+    margin-top: 20px; 
+    padding: 10px;
+  }
+  
+  .limpar-button-4,
+  .limpar-button-3 {
+    width: 100%; 
+  }
+}
+
+@media screen and (max-width: 600px){
+.form-container[_ngcontent-ng-c2970529669] {
+    flex-direction: column;
+    align-items: center;
+}
+}
   
