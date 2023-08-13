@@ -55,7 +55,7 @@ a {
   }
 
   .left-content img {
-    max-width: 250px; 
+    max-width: 300px; 
     margin-right: 0; 
     margin-bottom: 20px;
     margin-left: auto; 
@@ -68,7 +68,7 @@ a {
   }
 
   .right-content h2 {
-    font-size: 32px;
+    font-size: 29px;
     margin-bottom: 30px; 
   }
 }
