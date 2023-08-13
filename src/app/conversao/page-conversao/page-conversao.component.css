@@ -179,6 +179,8 @@ div[ngIf] {
   .button-container button {
     font-size: 12px;
     padding: 6px 10px;
+    margin-left: 10px;
+    align-items: center;
   }
 }
 

@@ -45,62 +45,31 @@ a {
 .right-content p {
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 10px; /* Espaçamento entre o texto e as redes sociais */
   text-align: center;
   color: #fff;
 }
 
-.social-media {
-  margin-top: 20px;
-  text-align: center; /* Centralizar as redes sociais e seus ícones */
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center; /* Centralizar os ícones das redes sociais */
-}
-
-.social-icon {
-  margin-right: 10px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-icon a {
-  color: #333;
-  font-size: 32px; 
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-.social-icon a:hover {
-  background-color: #333;
-  color: #fff;
-  transform: scale(1.1); 
-}
-
 @media screen and (max-width: 767px) {
   .container {
-    flex-direction: column;
-    align-items: center;
+    padding: 20px; 
   }
 
   .left-content img {
-    margin-right: 0;
+    max-width: 300px; 
+    margin-right: 0; 
     margin-bottom: 20px;
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block; 
   }
 
-  .right-content {
-    text-align: center;
+  .span {
+    margin-top: 10px;
   }
 
   .right-content h2 {
-    font-size: 28px;
-  }
-
-  .social-icons {
-    justify-content: center;
+    font-size: 29px;
+    margin-bottom: 30px; 
   }
 }
 
