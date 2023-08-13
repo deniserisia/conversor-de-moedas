@@ -21,8 +21,8 @@
   text-align: center;
   padding: 20px;
   color: #01E0C1;
-  position: relative; /* Adicione esta linha */
-  z-index: 1; /* Adicione esta linha */
+  position: relative; 
+  z-index: 1; 
 }
 
 span{
@@ -42,8 +42,8 @@ span{
 
 
 .container {
-  position: relative; /* Adicione esta linha */
-  z-index: 1; /* Adicione esta linha */
+  position: relative; 
+  z-index: 1; 
   width: 80%;
   margin-top: 50px;
   margin: 0 auto;
@@ -60,10 +60,8 @@ p{
 
 .button-04,
 .button-05 {
-  color: #000; /* Alteração da cor do texto para preto */
+  color: #000; 
 }
-
-
 
 .form-container {
   display: flex;
@@ -87,9 +85,9 @@ input[type="number"] {
 }
 
 .high-value-icon {
-  color: #ff0000; /* Defina a cor desejada para o ícone de valor alto */
-  margin-left: 5px; /* Adicione um espaçamento entre o ícone e o texto */
-  vertical-align: middle; /* Alinhe verticalmente com o texto */
+  color: #ff0000; 
+  margin-left: 5px; 
+  vertical-align: middle; 
 }
 
 
@@ -157,24 +155,37 @@ div[ngIf] {
 .button-container button:hover {
   background-color: #fff
 }
+@media screen and (max-width: 768px) {
+  .top-text .title {
+    font-size: 24px;
+    margin-top: 30px;
+  }
 
-@media screen and (max-width: 600px) {
-  .form-container {
-    flex-direction: column;
-    align-items: flex-start;
+  .top-text .subtitle {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+    margin-top: 30px;
+    padding: 15px;
   }
 
   .mat-form-field,
   .button-container button {
-    width: 100%;
     margin: 5px 0;
+  }
+
+  .button-container button {
+    font-size: 12px;
+    padding: 6px 10px;
   }
 }
 
-.cambio-text {
-  text-align: left;
-}
 
-.title {
-  text-align: center;
+@media screen and (max-width: 600px){
+  .form-container[_ngcontent-ng-c2970529669] {
+      flex-direction: column;
+      align-items: center;
+  }
 }
