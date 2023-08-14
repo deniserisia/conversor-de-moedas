@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageContatoComponent } from './page-contato/page-contato.component';
 
 const routes: Routes = [
-  {path: 'contato', component: PageContatoComponent}
+  {path: 'sobre', component: PageContatoComponent}
 ];
 
 @NgModule({
