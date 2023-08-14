@@ -60,11 +60,10 @@ p{
   color: #fff;
 }
 
-.button-04 {
+.button-04,
+.button-05 {
   color: #000; /* Alteração da cor do texto para preto */
 }
-
-
 
 .form-container {
   display: flex;
@@ -378,9 +377,10 @@ div[ngIf] {
   }
 
   .container {
-    margin-top: 20px;
-    padding: 10px; 
+    width: 90%;
+    margin-top: 30px;
   }
+
 
   .button-container button {
     font-size: 12px;
@@ -422,4 +422,3 @@ div[ngIf] {
     align-items: center;
 }
 }
-  

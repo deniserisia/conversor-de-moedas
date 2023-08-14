@@ -93,6 +93,9 @@ nav {
   z-index: 2;
 }
 
+.checkbtn-close {
+  display: none;
+}
 
 @media (max-width: 858px) {
     .logo img {
@@ -133,13 +136,7 @@ nav {
       text-align: center;
       font-size: 25px;
     }
-  }
-
-  .checkbtn-close {
-    color: var(--sec--color);
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
+    
   }
 
 
