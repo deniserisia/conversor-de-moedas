@@ -36,7 +36,6 @@
   <br>
   <br>
   <div class="container-mod center">
-    <!-- Itens por página à direita -->
     <div class="itens">
       <mat-form-field appearance="fill" class="itens">
         <mat-label class="text-dark">Itens por página:</mat-label>
@@ -47,12 +46,13 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <!-- Paginação à esquerda -->
     <div class="pagination-controls">
-      <pagination-controls class="ngx-pagination" (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
-        [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
-      </pagination-controls>
-    </div>    
+      <div class="ngx-pagination-white">
+        <pagination-controls (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
+          [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
+        </pagination-controls>
+      </div>
+    </div>       
   </div>
 </div>
 </section>
