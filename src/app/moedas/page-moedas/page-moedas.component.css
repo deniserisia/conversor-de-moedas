@@ -110,33 +110,53 @@ h2 {
   width: 100%;
   max-width: 200px;
   display: flex;
-  margin-left: auto; /* Centraliza horizontalmente */
-  margin-right: auto; /* Centraliza horizontalmente */
+  margin-left: auto; 
+  margin-right: auto; 
   padding: 10px;
   align-items: center;
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: center; 
 }
 
-.pagination-controls {
+.itens-2{
+  width: 50%;
+  max-width: 200px;
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
+  margin-left: auto; 
+  margin-right: auto; 
+  padding: 10px;
   align-items: center;
-  color: white;
-  font-size: 10px;
- 
+  justify-content: center; 
 }
 
-.ngx-pagination {
-  margin-left: 0;
-  margin-bottom: 1rem;
-  color: white;
- 
+.container-mod ::ng-deep .ngx-pagination .current {
+  background: #01E0C1;
+  color: black;
+  font-weight: 700;
+  border-radius: 50%;
 }
-.pagination-controls .ngx-pagination {
-  color: white; /* Define a cor do texto para branco */
-}
-.ngx-pagination-white {
-  color: white; /* Define a cor do texto para branco */
+
+.container-mod ::ng-deep ul>li:not(.active)>a {
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
 }
 
 
+.container-mod ::ng-deep ul>li>a:hover {
+  background-color: #bfbfbf;
+  color: black;
+}
+
+/* Media query para estilos responsivos */
+@media (max-width: 768px) {
+  .container-mod ::ng-deep ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .container-mod ::ng-deep ul > li {
+    margin: 5px;
+  }
+}

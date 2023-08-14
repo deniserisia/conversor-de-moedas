@@ -35,24 +35,21 @@
 
   <br>
   <br>
-  <div class="container-mod center">
-    <div class="itens">
-      <mat-form-field appearance="fill" class="itens">
-        <mat-label class="text-dark">Itens por página:</mat-label>
-        <mat-select [(ngModel)]="itensPorPagina" (selectionChange)="atualizarPaginacao(1)">
-          <mat-option value="5">5</mat-option>
-          <mat-option value="10">10</mat-option>
-          <mat-option value="15">15</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="pagination-controls">
-      <div class="ngx-pagination-white">
-        <pagination-controls (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
-          [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
-        </pagination-controls>
-      </div>
-    </div>       
+  <div class="container-mod" *ngIf="!loading && coinList.length !== 0">
+    <mat-form-field appearance="fill" class="itens">
+      <mat-label class="text-dark">Itens por página:</mat-label>
+      <mat-select [(ngModel)]="itensPorPagina" (selectionChange)="atualizarPaginacao(1)">
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="15">15</mat-option>
+        <mat-option value="20">20</mat-option>
+        <mat-option value="25">25</mat-option>
+        <mat-option value="30">30</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <pagination-controls class="itens-2" (pageChange)="atualizarPaginacao($event)" [maxSize]="5" [directionLinks]="true"
+      [responsive]="true" [previousLabel]="'Anterior'" [nextLabel]="'Próximo'">
+    </pagination-controls>
   </div>
 </div>
 </section>
