@@ -216,7 +216,7 @@ div[ngIf] {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 70vh;
   background: linear-gradient(to right, #000000, #333333);
 }
 
