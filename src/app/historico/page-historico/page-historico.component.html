@@ -13,13 +13,13 @@
   
           <!-- Data Column -->
           <ng-container matColumnDef="data">
-            <th mat-header-cell *matHeaderCellDef>Data</th>
+            <th mat-header-cell *matHeaderCellDef>Data da Conversão</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.data | date: 'dd/MM/yyyy' }}</td>
           </ng-container>
   
           <!-- Hora Column -->
           <ng-container matColumnDef="hora">
-            <th mat-header-cell *matHeaderCellDef>Hora</th>
+            <th mat-header-cell *matHeaderCellDef>Hora da Conversão</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.data | date: 'HH:mm' }}</td>
           </ng-container>
   
@@ -31,7 +31,7 @@
   
           <!-- Valor de Entrada Column -->
           <ng-container matColumnDef="valorEntrada">
-            <th mat-header-cell *matHeaderCellDef>Valor de Entrada</th>
+            <th mat-header-cell *matHeaderCellDef>Valor Informado</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.valorEntrada | number }}</td>
           </ng-container>
   
@@ -43,7 +43,7 @@
   
           <!-- Valor de Saída Column -->
           <ng-container matColumnDef="valorSaida">
-            <th mat-header-cell *matHeaderCellDef>Valor de Saída</th>
+            <th mat-header-cell *matHeaderCellDef>Resultado</th>
             <td mat-cell *matCellDef="let conversao">{{ conversao.valorSaida | number }}</td>
             
           </ng-container>

@@ -132,7 +132,7 @@ div[ngIf] {
   width: 100%;
   background-color: transparent;
   border: none;
-  color: #333;
+  color: #000;
 }
 
 .button-container {
@@ -149,6 +149,18 @@ div[ngIf] {
   font-size: 14px;
   padding: 8px 12px;
   background: #01E0C1;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button-container .button-05 {
+  flex: 1;
+  margin: 0 5px;
+  font-size: 14px;
+  padding: 8px 12px;
+  background: #279EFF;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .mat-form-field:hover,
