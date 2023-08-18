@@ -46,7 +46,7 @@
       <p>
         {{ fromCurrency }} <span> Valor convertido </span> = {{ convertedAmount | number }} {{ toCurrency }}
         <mat-icon *ngIf="isValueOver10000" svgIcon="high-value" class="high-value-icon"></mat-icon>
-        <span> | </span> A <span> Taxa de conversão </span> = {{ exchangeRate.rates[toCurrency] | number }}
+        <span> | </span> A <span> Taxa de conversão </span> utilizada = {{ exchangeRate.rates[toCurrency] | number }}
       </p>
     </div>    
   </div>
