@@ -87,6 +87,7 @@ span {
 
 .iconTop a:hover {
   transform: scale(1.2);
+  background: #279EFF;
 }
 
 .sub-footer {
