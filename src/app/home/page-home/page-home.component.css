@@ -282,12 +282,14 @@ div[ngIf] {
   align-items: center;
   text-align: center;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .limpar-button-4:hover {
-  background-color: #000;
+  background-color:#279EFF;
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
 }
 
 
@@ -388,11 +390,13 @@ div[ngIf] {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 20%;
+    font-weight: 500;
   }
   
   .limpar-button-3:hover {
-    background-color: #000;
+    background-color: #279EFF;
     color: #fff;
+    font-weight: 500;
   }
 
   .high-value-icon {
