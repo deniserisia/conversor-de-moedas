@@ -139,7 +139,19 @@ nav {
     
   }
 
+@media (max-width: 858px) {
 
+  /* Esconder o ícone de barras quando o menu estiver aberto */
+  #check:checked ~ .checkbtn {
+    display: none;
+  }
 
-  
-  
+  /* Exibir o ícone de X quando o menu estiver aberto */
+  #check:checked ~ .checkbtn-close {
+    display: block;
+    margin-right: 30px;
+    color: #ECEDDB;
+    font-size: 25px;
+    margin-left: 20px;
+  }
+}
